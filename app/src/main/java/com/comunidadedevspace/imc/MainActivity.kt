@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         //criar uma variavel e associar ao componente de UI<editText>
         //recuperar bottun da tela
         //coloar acao no button
-        //recuperar texto digitado no peso
+        //recuperar texto digitado no peso s
 
 
         val edt_peso = findViewById<TextInputEditText>(R.id.edt_peso)
