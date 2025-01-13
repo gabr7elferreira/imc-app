@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         //criar uma variavel e associar ao componente de UI<editText>
         //recuperar bottun da tela
         //coloar acao no button
-        //recuperar texto digitado no peso s
+        //recuperar texto digitado no peso
 
 
         val edt_peso = findViewById<TextInputEditText>(R.id.edt_peso)
@@ -22,9 +22,10 @@ class MainActivity : AppCompatActivity() {
         val btn_calcular = findViewById<Button>(R.id.btn_calcular)
 
         btn_calcular.setOnClickListener {
-            val peso = edt_peso.text
-            val altura = edt_altura.text
-            //val media: Double = peso * altura
+            val peso : Float = edt_peso.text.toString().toFloat()
+            val altura : Float = edt_altura.text.toString().toFloat()
+            val media: Float = peso * altura
+            println(media)
 
         }
     }
