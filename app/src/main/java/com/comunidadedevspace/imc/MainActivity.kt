@@ -1,5 +1,6 @@
 package com.comunidadedevspace.imc
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -26,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         val alturaIN = edt_altura.text.toString()
 
         btn_calcular.setOnClickListener {
-            if(pesoIN == "" && alturaIN == ""){
+            if(pesoIN == " " || alturaIN == " "){
                 Snackbar.make(edt_altura,"Prencha todos os campos", Snackbar.LENGTH_LONG).show()
 
 
@@ -34,7 +35,13 @@ class MainActivity : AppCompatActivity() {
                 val peso : Float = edt_peso.text.toString().toFloat()
                 val altura : Float = edt_altura.text.toString().toFloat()
                 val media: Float = peso / (altura * altura)
-                println(media)
+
+                val AintecaoDeTrocarDeTela = Intent(this, ResultActivity::class.java)
+
+                AintecaoDeTrocarDeTela.putExtra(KEY_RESULT_IMC, media)
+
+                startActivity(AintecaoDeTrocarDeTela)
+
             }
         }
     }
